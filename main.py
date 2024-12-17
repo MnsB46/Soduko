@@ -10,7 +10,6 @@ def createMatrix():
         lstr = []
     return lst
 
-
 def placeStartingDigits(matrix):
     placing = True
     while placing:
@@ -26,7 +25,7 @@ def showMatrix(matrix):
         string = ""
         for i in e:
             if i.value == None:
-                string += " | N"
+                string += " |  "
             else:
                 string += " | " + str(i.value)
         print(string)
