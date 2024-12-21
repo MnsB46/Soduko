@@ -5,14 +5,22 @@ class board:
         self.matrix = self.createMatrix()
 
     def __str__(self):
-        string = ""
+        string = "+--------+--------+--------+\n"
+        counter = 1
         for e in self.matrix:
+            counter2 = 0
             for i in e:
+                if counter2 % 3 == 0:
+                    string += "| "
                 if i.value == None:
-                    string += " |  "
+                    string += "  "
                 else:
-                    string += " | " + str(i.value)
-            string += "\n"
+                    string += " " + str(i.value)
+                counter2 += 1
+            string += "|\n"
+            if counter % 3 == 0:
+                string += "+-------+-------+-------+\n"
+            counter += 1
         return string
 
     def removePossibleValuesAfterPlacingDigit(self, r, c, b, v):
