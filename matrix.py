@@ -11,7 +11,7 @@ class board:
             counter2 = 0
             for i in e:
                 if counter2 % 3 == 0:
-                    string += "| "
+                    string += "|"
                 if i.value == None:
                     string += "  "
                 else:
@@ -19,7 +19,7 @@ class board:
                 counter2 += 1
             string += "|\n"
             if counter % 3 == 0:
-                string += "+-------+-------+-------+\n"
+                string += "+------+------+------+\n"
             counter += 1
         return string
 
@@ -29,9 +29,8 @@ class board:
                 if sqr.value == None and (sqr.row == r or sqr.column == c or sqr.box == b):
                     if v in sqr.possibleValues:
                         sqr.removePossibleValue(v)
-                        if len(sqr.possibleValues) == 1:
-                            print((sqr.row, sqr.column, sqr.possibleValues[0]))
-                            self.placeDigit(sqr.row, sqr.column, sqr.possibleValues[0])
+                        #if len(sqr.possibleValues) == 1:
+                            #self.placeDigit(sqr.row, sqr.column, sqr.possibleValues[0])
     
     def placeDigit(self, row, column, v):
         self.matrix[row-1][column-1].changeDigit(v)
